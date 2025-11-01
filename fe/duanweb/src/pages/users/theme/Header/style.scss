@@ -1,0 +1,256 @@
+.header {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  // Top Banner
+  .header-top-banner {
+    background: linear-gradient(135deg, #ffb800, #ffcc00);
+    color: #fff;
+    font-weight: 500;
+
+    .banner-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding: 8px 0;
+      font-size: 14px;
+
+      .banner-title {
+        font-weight: 700;
+        font-size: 15px;
+      }
+
+      .banner-offer {
+        background: #ff3b30;
+        padding: 2px 8px;
+        border-radius: 4px;
+        font-weight: 600;
+        font-size: 13px;
+      }
+
+      .btn-buy-now {
+        background: #ff3b30;
+        color: #fff;
+        border: none;
+        padding: 6px 16px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 13px;
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover {
+          background: #e6332a;
+        }
+      }
+    }
+  }
+
+  // Main Header
+  .header-main {
+    background: #ffb800;
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .header-logo {
+      .logo-img {
+        height: 40px;
+        width: auto;
+      }
+    }
+
+    .header-search {
+      flex: 1;
+      max-width: 500px;
+      position: relative;
+      display: flex;
+
+      .search-input {
+        width: 100%;
+        padding: 10px 40px 10px 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 14px;
+        outline: none;
+
+        &::placeholder {
+          color: #999;
+        }
+      }
+
+      .search-btn {
+        position: absolute;
+        right: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #ff3b30;
+        color: #fff;
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: background 0.2s;
+
+        &:hover {
+          background: #e6332a;
+        }
+      }
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+
+      .action-btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+        cursor: pointer;
+        white-space: nowrap;
+
+        &.login-btn {
+          background: rgba(255, 255, 255, 0.2);
+          padding: 6px 12px;
+          border-radius: 6px;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.3);
+          }
+        }
+
+        .caret {
+          font-size: 10px;
+          margin-left: 2px;
+        }
+      }
+    }
+
+    .mobile-menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  // Navigation
+  .header-nav {
+    background: #fff;
+    border-top: 1px solid #eee;
+
+    .nav-container {
+      padding: 0 16px;
+    }
+
+    .nav-list {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-item {
+        flex: 0 0 auto;
+
+        .nav-link {
+          display: block;
+          padding: 12px 14px;
+          color: #333;
+          font-size: 14px;
+          font-weight: 500;
+          text-decoration: none;
+          transition: color 0.2s;
+
+          &:hover {
+            color: #d70018;
+          }
+
+          .caret {
+            font-size: 10px;
+            margin-left: 2px;
+          }
+        }
+      }
+    }
+  }
+
+  // Responsive
+  @media (max-width: 992px) {
+    .header-actions {
+      .action-btn span {
+        display: none;
+      }
+      .action-btn.login-btn span {
+        display: inline;
+      }
+    }
+
+    .header-search {
+      max-width: 300px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header-main {
+      .header-container {
+        padding: 10px 12px;
+      }
+
+      .header-search {
+        order: 3;
+        flex-basis: 100%;
+        max-width: none;
+        margin-top: 8px;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .header-actions {
+        gap: 12px;
+      }
+    }
+
+    .header-nav {
+      display: none; // Ẩn nav trên mobile, có thể mở bằng menu
+    }
+  }
+}
